@@ -21,7 +21,7 @@ function fade(count, element, opacity, callback) {
       fade(count, element, opacity, callback);
     }, 300);
   } else {
-    if(typeof callback === 'function') window.setTimeout(callback, 3300);
+    if (typeof callback === 'function') window.setTimeout(callback, 3300);
   }
 }
 
@@ -31,8 +31,8 @@ $(document).ready(function() {
   prepare($quote, 8);
   prepare($author, 8);
   window.setTimeout(function(){
-    fade(8,$('.quote'),0.0,function(){
-      $quote.addClass('opaque').html('My name is Colin Wren and I\'m a full stack JavaScript developer, designer, and open source software enthusiast located in the San Francisco Bay Area. Currently, I\'m working on open source projects full time and seeking the perfect web development position.');
+    fade(8, $quote, 0.0, function(){
+      $quote.addClass('opaque').html('My name is Colin Wren and I\'m a full stack JavaScript developer, designer, and open source software enthusiast located in the San Francisco Bay Area. Currently, I\'m working on open source projects full time and seeking freelance work on innovative web projects.');
       $author.addClass('opaque').html('If you\'d like to get in touch, you can reach me through my <a href="mailto:colin@cawren.com" class="contact">Email</a>, <a href="https://github.com/colinwren" class="contact">GitHub</a>, or <a href="https://twitter.com/colinwrenca" class="contact">Twitter</a>.');
       prepare($quote, 8);
       prepare($author, 8);
