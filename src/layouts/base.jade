@@ -1,0 +1,25 @@
+doctype 5
+html
+  head
+    title Colin Wren
+    meta(charset="utf8")
+    meta(name="viewport", content="width=device-width")
+    block stylesheets
+    link(href="/styles/main.css", rel="stylesheet")
+  body
+    ul.nav
+      li.nav-item.nav-blue
+        a(href="/") home
+      li.nav-item.nav-orange
+        a(href="/blog") blog
+
+    block header
+    block content
+    block footer
+    block scripts
+
+    script
+      var _gaq=[['_setAccount','UA-34596567-2'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));

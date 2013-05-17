@@ -1,0 +1,16 @@
+extends base
+
+block stylesheets
+  link(href="/styles/tomorrow-night-bright.css", rel="stylesheet")
+
+  div.content.post-content
+    h1.post-title= title
+    h2.created Published 
+      abbr.timeago(title="#{date}")
+    div!= content
+
+block scripts
+  script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+  script(src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.1.0/jquery.timeago.min.js")
+  script(src="/scripts/posts.js")
+

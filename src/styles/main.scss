@@ -1,0 +1,147 @@
+@import 'http://fonts.googleapis.com/css?family=Arimo';
+@import 'http://fonts.googleapis.com/css?family=Cabin';
+
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, arial, freesans, clean, sans-serif;
+  cursor: pointer;
+  li {
+    float: left;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: hsl(0, 0%, 23%);
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.nav-item {
+    padding: 20px 15px;
+  font-size: 25px;
+  letter-spacing: 1px;
+  a {
+    text-decoration: none;
+    color: hsl(0, 0%, 23%);
+    &:hover {
+      text-decoration: underline;
+    }
+    &:active {
+      opacity: 0.1;
+    }
+  }
+}
+
+body {
+  margin: 0px;
+  background: hsl(20, 18%, 93%);
+  font-family: cabin;
+  -webkit-font-smoothing: antialiased;
+  color: hsl(0, 0%, 23%);
+}
+
+.content {
+  width: 70%;
+  max-width: 810px;
+  margin: 0 auto;
+}
+
+.quote {
+  font-size: 44px;
+  margin: 18% 0 20px;
+  letter-spacing: 1px;
+}
+
+.author {
+  margin: 35px 0;
+  color: hsl(0, 0%, 65%);
+  font-size: 35px;
+}
+
+.opaque span{
+  opacity: 0;
+  filter: alpha(Opacity=00);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
+}
+
+@media all and (max-width: 800px){
+  .quote{
+    font-size: 30px;
+  }
+
+  .author{
+    font-size: 20px;
+  }
+}
+
+.posts {
+  list-style: none;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 0;
+}
+
+.post {
+  margin: 15px 0;
+  opacity: 0;
+  filter: alpha(Opacity=00);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
+}
+
+.post-date {
+  opacity: .5;
+  width: 280px;
+  margin-right: 50px;
+  float: left;
+  text-align: right;
+}
+
+// Post page
+
+.post-title {
+  font-size: 45px;
+}
+
+.created {
+  font-size: 30px;
+  opacity: 0.2;
+  margin:15px 0;
+}
+
+.post-content {
+  width: 600px;
+  font-size: 19px;
+  a {
+    color: hsl(0, 47%, 36%);
+    font-weight: bold;
+  }
+
+  p {
+    line-height: 25px;
+  }
+}
+
+code {
+  background: hsla(0, 0%, 18%, 0.11);
+  padding: 2px 4px;
+  font-size: 15px;
+  margin: 0 3px;
+  border-radius: 3px;
+}
+
+pre {
+  font-family: monaco;
+  font-size: .8em;
+  code {
+    padding: 15px;
+    line-height: 1.4em;
+    font-family: monaco;
+  }
+}
