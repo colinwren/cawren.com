@@ -1,0 +1,23 @@
+@import "base";
+
+.posts {
+  list-style: none;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 0;
+}
+
+.post {
+  margin: 15px 0;
+  opacity: 0;
+  filter: alpha(Opacity=00);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
+}
+
+.post-date {
+  opacity: .5;
+  width: 280px;
+  margin-right: 50px;
+  float: left;
+  text-align: right;
+}
