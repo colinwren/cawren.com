@@ -9,7 +9,7 @@ function fadePosts (posts) {
 }
 
 $(document).ready(function() {
-  jQuery('abbr.timeago').timeago();
+  $('abbr.timeago').timeago();
   var posts = $('.post');
   fadePosts($.makeArray(posts));
 });

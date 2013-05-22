@@ -5,7 +5,7 @@ $(document).ready(function() {
 
         $('.quote')
           .addClass('opaque')
-          .html('My name is Colin Wren and I\'m a full stack JavaScript developer, designer, and open source software enthusiast located in the San Francisco Bay Area. Currently, I\'m contributing to open source projects full time and seeking web development work.');
+          .html('My name is Colin Wren and I\'m a full stack JavaScript developer, designer, and open source software enthusiast located in the San Francisco Bay Area.');
 
         $('.author')
           .addClass('opaque')
