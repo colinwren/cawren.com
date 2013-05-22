@@ -8,7 +8,7 @@
 }
 
 .author {
-  opacity: .6;
+  @include opacity(0.6);
   margin: 35px 0;
   font-size: 35px;
   @include breakpoint(big-phone) {
@@ -20,7 +20,5 @@
 }
 
 .opaque span{
-  opacity: 0;
-  filter: alpha(Opacity=00);
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
+  @include opacity(0);
 }

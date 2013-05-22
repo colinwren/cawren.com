@@ -8,23 +8,27 @@
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, arial, freesans, clean, sans-serif;
   cursor: pointer;
+
   li {
     float: left;
   }
 }
 
 .nav-item {
-    padding: 20px 15px;
+  padding: 20px 15px;
   font-size: 25px;
   letter-spacing: 1px;
+
   a {
     text-decoration: none;
     color: hsl(0, 0%, 23%);
+
     &:hover {
       text-decoration: underline;
     }
+
     &:active {
-      opacity: 0.1;
+      @include opacity( 0.1 );
     }
   }
 }

@@ -4,20 +4,16 @@
 
 .created {
   font-size: 30px;
-  opacity: 0.2;
+  @include opacity( 0.2);
   margin:15px 0;
 }
 
-.post-content {
-  width: 600px;
+.post-body{
   font-size: 19px;
+  line-height: 25px;
+  margin-bottom: 50px;
   a {
     color: hsl(0, 47%, 36%);
-    font-weight: bold;
-  }
-
-  p {
-    line-height: 25px;
   }
 }
 
@@ -26,7 +22,7 @@ code {
   padding: 2px 4px;
   font-size: 15px;
   margin: 0 3px;
-  border-radius: 3px;
+  @include border-radius(3px);
 }
 
 pre {

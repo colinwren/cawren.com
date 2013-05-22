@@ -14,5 +14,5 @@ $(document).ready(function() {
         $toDissolve.dissolve({ opacity: 1 },function() {
         });
       });
-    }, 4700);
+    }, 5000);
 });

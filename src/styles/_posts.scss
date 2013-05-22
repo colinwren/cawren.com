@@ -1,21 +1,17 @@
 .posts {
   list-style: none;
   font-size: 30px;
-  font-weight: bold;
   padding: 0;
-
 }
 
 .post {
   margin: 15px 0;
   padding: 5px;
-  opacity: 0;
-  filter: alpha(Opacity=00);
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
+  @include opacity(0);
 }
 
 .post-date {
-  opacity: .6;
+  @include opacity(0.6);
   width: 280px;
   margin-right: 50px;
   float: left;
