@@ -100,18 +100,6 @@ module.exports = function (grunt) {
         }
       }
     },
-    rev: {
-      dist: {
-        files: {
-          src: [
-            '<%= cabin.dist %>/scripts/{,*/}*.js',
-            '<%= cabin.dist %>/styles/{,*/}*.css',
-            '<%= cabin.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
-            '<%= cabin.dist %>/styles/fonts/*'
-          ]
-        }
-      }
-    },
     usemin: {
       html: ['<%= cabin.dist %>/{,*/}*.html'],
       css: ['<%= cabin.dist %>/styles/{,*/}*.css'],
@@ -133,8 +121,8 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= cabin.src %>',
-          src: '*.html',
+          cwd: '<%= cabin.dev %>',
+          src: '**/*.html',
           dest: '<%= cabin.dist %>'
         }]
       }
@@ -150,6 +138,7 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,txt}',
             '.htaccess',
+            'scripts/{,*/}*.js',
             'images/{,*/}*.{webp,gif}',
             'styles/fonts/*'
           ]
@@ -184,13 +173,11 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'useminPrepare',
     'concurrent:dist',
     'blog',
     'cssmin',
-    'copy',
-    'rev',
-    'usemin'
+    'htmlmin',
+    'copy'
   ]);
 
   grunt.registerTask('default', [
