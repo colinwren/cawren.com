@@ -2,33 +2,38 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 20px;
+  font-size: 22px;
   list-style: none;
-  padding: 0;
+  padding: .7em;
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, arial, freesans, clean, sans-serif;
   cursor: pointer;
 
   li {
     float: left;
   }
+  @include breakpoint(big-phone) {
+    background: hsl(0, 14%, 62%);
+    font-size: 16px;
+  }
+}
+
+body {
+  @include breakpoint(big-phone) {
+    padding-bottom:  3em;
+  }
 }
 
 .nav-item {
-  padding: 20px 15px;
-  font-size: 25px;
+  padding: 0 20px;
   letter-spacing: 1px;
 
   a {
-    text-decoration: none;
-    color: hsl(0, 0%, 23%);
+    font-size: 1em;
+    font-family: "Helvetica Neue", Helvetica, arial, freesans, clean, sans-serif;
+    font-weight: normal;
 
-    &:hover {
-      text-decoration: underline;
-    }
-
-    &:active {
-      @include opacity( 0.1 );
+    @include breakpoint(big-phone) {
+      color: white;
     }
   }
 }

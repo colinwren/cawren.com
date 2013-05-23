@@ -1,13 +1,12 @@
 extends ../layouts/base
 
 block content
-  .content
-    ul.posts
-      each post in posts
-        li.post
-          a(href="/#{post.url}")
-            abbr.timeago.post-date(title="#{post.date}")
-            | #{post.title}
+  ul.content.content-posts
+    each post in posts
+      li.post
+        a(href="/#{post.url}")
+          abbr.timeago.post-date(title="#{post.date}")
+          | #{post.title}
 block scripts
   script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
   script(src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.1.0/jquery.timeago.min.js")

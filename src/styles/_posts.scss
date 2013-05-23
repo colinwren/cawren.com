@@ -1,19 +1,32 @@
-.posts {
+.content-posts {
   list-style: none;
-  font-size: 30px;
   padding: 0;
+  margin-top: 20px;
+  width: 60%;
+  @include breakpoint(big-phone) {
+    font-size: 16px;
+    width: 78%;
+  }
+  @include breakpoint(small-phone) {
+    font-size: 14px;
+    width: 90%;
+  }
 }
 
 .post {
-  margin: 15px 0;
-  padding: 5px;
+  font-size: 1.6em;
+  margin: 1.4em 0;
   @include opacity(0);
 }
 
 .post-date {
   @include opacity(0.6);
-  width: 280px;
   margin-right: 50px;
+  margin-right: 2.4em;
+  @include breakpoint(small-phone) {
+    margin-right: 1.4em;
+    display: none;
+  }
+
   float: left;
-  text-align: right;
 }
