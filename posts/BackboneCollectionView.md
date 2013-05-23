@@ -58,7 +58,7 @@ functionality to add a model (and its corresponding view) to the collection to
 show that the class that inherits from Backbone.CollectionView listens to its collection and handles the
 re-rendering for you.
 
-### Inheriting from Backbone.view
+### Inheriting from Backbone.View
 ```javascript
 var TodosView = Backbone.View.extend({
   el: $('#todo-container'),
