@@ -18,9 +18,7 @@
 }
 
 body {
-  @include breakpoint(big-phone) {
-    padding-bottom:  3em;
-  }
+  padding-bottom:  3em;
 }
 
 .nav-item {
