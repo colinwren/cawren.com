@@ -1,29 +1,11 @@
 extends base
 
+block title
+  title= post.title
+
+block nav
+  mixin nav()
+
 block content
-  .post-content
-    h1.post-title= title
-    h2.created Published 
-      abbr.timeago(title="#{date}")
-    .post-body!= content
-
-    #disqus_thread
-    script
-        var disqus_shortname = 'colinwren';
-
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-
-    noscript Please enable JavaScript to view the
-      a(href="http://disqus.com/?ref_noscript") comments powered by Disqus
-
-    a.dsq-brlink(href="http://disqus.com") comments powered by
-      span.logo-disqus Disqus
-
-block scripts
-  script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
-  script(src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.1.0/jquery.timeago.min.js")
-  script(src="/scripts/posts.js")
+  .post
+    mixin post(post)

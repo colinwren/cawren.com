@@ -1,9 +1,3 @@
-var cabinConfig = {
-  src: 'src',
-  dev: '.tmp',
-  dist: 'dist'
-};
-
 var mountFolder = function (connect, dir) {
   return connect.static(require('path').resolve(dir));
 };
@@ -13,174 +7,106 @@ module.exports = function (grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
-    cabin: cabinConfig,
     watch: {
-      options: {
-        livereload: true
+      dist: {
+        files: ['dist/**'],
+        options: {
+          livereload: true
+        }
       },
+      
       compass: {
-        files: ['<%= cabin.src %>/styles/{,*/}*'],
-        tasks: ['compass:server']
+        files: ['src/styles/**'],
+        tasks: ['compass']
       },
-      blog: {
-        files: ['src/pages/**/*', 'posts/{,*/}*', 'src/layouts/{,*/}*', 'Gruntfile.*'],
-        tasks: ['blog']
+      pages: {
+        files: ['src/pages/**', 'posts/**', 'src/layouts/**'],
+        tasks: ['pages']
+      },
+      copy: {
+        files: ['src/images/**', 'src/styles/**.css', 'src/styles/fonts/**', 'src/scripts/**'],
+        tasks: ['copy']
       }
     },
-    blog: {
+    pages: {
       options: {
-        pageSrc: 'src/pages',
-        devFolder: '<%= cabin.dev %>',
-        distFolder: '<%= cabin.dist %>'
+        pageSrc: 'src/pages'
       },
       posts: {
         src: 'posts',
-        layout: '<%= cabin.src %>/layouts/post.jade',
-        url: 'posts/:title'
+        dest: 'dist',
+        layout: 'src/layouts/post.jade',
+        url: ':title',
+        options: {
+          pagination: {
+            postsPerPage: 1,
+            listPage: 'src/pages/index.jade'
+          }
+        }
       }
     },
     connect: {
-      options: {
-        port: 9000,
-        hostname: 'localhost'
-      },
-
-      livereload: {
-        options: {
-          middleware: function (connect) {
-            return [
-              // These dir names have to be hardcoded
-              mountFolder(connect, '.tmp'),
-              mountFolder(connect, 'src')
-            ];
-          }
-        }
-      },
       dist: {
         options: {
+        port: 5455,
+        hostname: '0.0.0.0',
           middleware: function (connect) {
             return [
-              mountFolder(connect, 'dist')
+              require('grunt-contrib-livereload/lib/utils').livereloadSnippet,
+              mountFolder(connect, 'dist'),
+              mountFolder(connect, 'src')
             ];
           }
         }
       }
     },
     open: {
-      server: {
-        path: 'http://localhost:9000'
+      dist: {
+        path: 'http://localhost:5455'
       }
     },
     clean: {
-      dist: {
-        files: [{
-          dot: true,
-          src: [
-            '<%= cabin.dev %>',
-            '<%= cabin.dist %>/*',
-            // This is for making a subtree repo don't delete
-            '!<%= cabin.dist %>/.git*'
-          ]
-        }]
-      },
-      server: '<%= cabin.dev %>'
+      dist: 'dist'
     },
     compass: {
       options: {
-        sassDir: '<%= cabin.src %>/styles',
-        cssDir: '<%= cabin.dev %>/styles',
-        imagesDir: '<%= cabin.src %>/images',
-        javascriptsDir: '<%= cabin.src %>/scripts',
-        relativeAssets: true
+        sassDir: 'src/styles',
+        cssDir: 'dist/styles'
       },
-      dist: {},
-      server: {
-        options: {
-          debugInfo: true
-        }
-      }
+      dist: {}
     },
-    usemin: {
-      html: ['<%= cabin.dist %>/{,*/}*.html'],
-      css: ['<%= cabin.dist %>/styles/{,*/}*.css'],
-      options: {
-        dirs: ['<%= cabin.dist %>']
-      }
-    },
-    cssmin: {
-      dist: {
-        files: {
-          '<%= cabin.dist %>/styles/main.css': [
-            '<%= cabin.dev %>/styles/{,*/}*.css',
-            '<%= cabin.src %>/styles/{,*/}*.css'
-          ]
-        }
-      }
-    },
-    htmlmin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= cabin.dev %>',
-          src: '**/*.html',
-          dest: '<%= cabin.dist %>'
-        }]
-      }
-    },
-    // Put files not handled in other tasks here
+    // Move files not handled by other tasks
     copy: {
       dist: {
         files: [{
           expand: true,
           dot: true,
-          cwd: '<%= cabin.src %>',
-          dest: '<%= cabin.dist %>',
+          cwd: 'src',
+          dest: 'dist',
           src: [
-            '*.{ico,txt}',
-            '.htaccess',
-            'scripts/{,*/}*.js',
-            'images/{,*/}*.{webp,gif}',
-            'styles/fonts/*'
+            'images/**',
+            'styles/**.css',
+            'styles/fonts/**',
+            'scripts/**'
           ]
         }]
       }
-    },
-    concurrent: {
-      server: [
-        'compass:server'
-      ],
-      dist: [
-        'compass:dist',
-        'htmlmin'
-      ]
     }
-  });
-
-  grunt.registerTask('server', function (target) {
-    if (target === 'dist') {
-      return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
-    }
-
-    grunt.task.run([
-      'clean:server',
-      'concurrent:server',
-      'blog',
-      'connect:livereload',
-      'open',
-      'watch'
-    ]);
   });
 
   grunt.registerTask('build', [
-    'clean:dist',
-    'concurrent:dist',
-    'blog',
-    'cssmin',
-    'htmlmin',
+    'clean',
+    'compass',
+    'pages',
     'copy'
   ]);
 
-  grunt.registerTask('default', [
-    'build'
+  grunt.registerTask('server', [
+    'build',
+    'connect',
+    'open',
+    'watch'
   ]);
+
+  grunt.registerTask('default', 'server');
 };

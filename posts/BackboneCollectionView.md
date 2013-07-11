@@ -1,3 +1,4 @@
+----
 title: Backbone.Collection View
 date:   2013-05-15
 ----

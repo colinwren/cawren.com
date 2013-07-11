@@ -1,56 +1,67 @@
-.post-content {
-  width: 80%;
-  max-width: 630px;
-  margin: 0 auto;
-  @include breakpoint(big-phone) {
-    font-size: 14px;
-    width: 84%;
-  }
-  @include breakpoint(small-phone) {
-    font-size: 14px;
-  }
+.post-head {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+.post {
+  padding: 1.8em 2.8em;
+  margin: 0 0  33px;
+  @include shadow(hsl(0, 0%, 100%));
+}
+
+.archive-post {
+  font-size: 12px;
+  margin: 0 0 13px;
+  padding: 14px 25px;
+  @include shadow(hsl(0, 0%, 100%));
 }
 
 .post-title {
-  font-size: 2.6em;
-  margin: 0.65em 0 0;
-  @include breakpoint(small-phone) {
-    font-size: 2em;
+  margin: 0;
+  font-size: 2.1em;
+}
+
+.post-date {
+  margin: .2em 0;
+  font-size: 1.4em;
+  opacity: 0.3;
+}
+
+.post-body {
+  margin-bottom: 1.2em;
+  line-height: 1.65em;
+  font-size: 1em;
+  p a {
+    color: hsl(210, 63%, 58%);
   }
 }
 
-.created {
-  font-size: 1.8em;
-  @include opacity(0.2);
-  @include breakpoint(big-phone) {
-    font-size: 1.4em;
-  }
-}
-
-.post-body{
-  font-family: 'Merriweather', serif;
-  line-height: 1.5em;
-  margin-bottom: 50px;
-  a {
-    color: hsl(0, 47%, 36%);
-  }
-}
-
-code {
-  background: hsla(0, 0%, 18%, 0.05);
-  border: 1px solid hsla(0, 0%, 18%, 0.15);
-  padding: .1em .2em;
-  font-size: .8em;
-  margin: 0 .1em;
+p code {
+  background: hsl(240, 100%, 96%);
+  border: 1px solid hsl(0, 0%, 90%);
+  padding: 0 0.23em;
   @include border-radius(3px);
 }
 
+code {
+  margin: 0;
+  padding: 0;
+  font-size: .8em;
+  line-height: 1.5em;
+  font-family: $codeFont;
+}
+
 pre {
-  font-family: monaco;
-  font-size: 1.15em;
-  code {
-    padding: 1em;
-    line-height: 1.4em;
-    font-family: monaco;
+  font-family: $codeFont;
+  overflow: auto;
+  margin: .5em 0 0;
+}
+
+.highlight {
+  @include border-radius(3px);
+
+  pre {
+    padding: 15px;
   }
 }

@@ -1,11 +1,23 @@
 extends ../layouts/base
-
+block nav
+  mixin nav('index')
 block content
-  .content.content-home
-    .quote The computer is the most remarkable tool that we've ever come up with. It's the equivalent of a bicycle for our minds.
-    .author Steve Jobs
+  each post in posts
+    .post
+      mixin post(post)
+  ul.pagination.group
+    - for (var i = 0; i < pages.length; i++) {
+    -   if (pages[i].currentPage) var currentIndex = i;
+    - }
 
-block scripts
-  script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
-  script(src="scripts/dissolve.js")
-  script(src="scripts/home.js")
+    - for (var j = 0; j < pages.length; j++) {
+      - var page = pages[j];
+      - if (j === currentIndex - 1) {
+        li.newer
+          a(href="#{page.url}") Newer &#8594;
+      - } else if (j === currentIndex + 1) {
+        li.older
+          a.active-page(href="#{page.url}") &#8592; Older
+      - }
+    - }
+
