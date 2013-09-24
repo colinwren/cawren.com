@@ -25,15 +25,67 @@
 .post-date {
   margin: .2em 0;
   font-size: 1.4em;
-  opacity: 0.3;
+  color: $lightTextColor;
 }
 
 .post-body {
   margin-bottom: 1.2em;
   line-height: 1.65em;
   font-size: 1em;
-  p a {
-    color: hsl(210, 63%, 58%);
+
+  a {
+    color: $blueGrey;
+  }
+
+  .anchor {
+    text-decoration: none;
+    position: absolute;
+    margin-left: -1.7em;
+    padding-left: 1.7em;
+    outline: none;
+    color: $baseTextColor;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  h1, h2, h3,
+  h4, h5, h6 {
+    &:hover .header-link {
+      visibility: visible;
+    }
+  }
+}
+
+.header-link {
+  @extend .icon-link;
+  margin-left: -1.7em;
+  font-size: .65em;
+  visibility: hidden;
+}
+
+.social {
+  padding: .55em 0 1.4em;
+}
+
+.comments {
+  margin-top: 25px;
+  font-weight: bold;
+  font-size: 1.2em;
+
+  a {
+    color: $lightTextColor;
+
+    &:hover {
+      text-decoration: none;
+      color: $linkColor;
+    }
+  }
+
+  .icon-bubbles {
+    padding: 3px 15px 5px 0;
+    float: left;
   }
 }
 
@@ -55,7 +107,8 @@ code {
 pre {
   font-family: $codeFont;
   overflow: auto;
-  margin: .5em 0 0;
+  margin-top: 0em;
+  margin-bottom: -1.5em;
 }
 
 .highlight {
@@ -63,5 +116,6 @@ pre {
 
   pre {
     padding: 15px;
+    margin-bottom: 0;
   }
 }

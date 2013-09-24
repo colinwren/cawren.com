@@ -1,14 +1,18 @@
 $(function() {
+
+  'use strict';
+
   $('abbr.timeago').timeago();
-  var nav = false;
-  // Show or hide nav dropdown
-  $(window).click(function(event) {
-    if (nav) {
-      $('.nav-link').removeClass('nav-show');
-      nav = false;
-    } else if ($(event.target).hasClass('menu')) {
-      $('.nav-link').addClass('nav-show');
-      nav = true;
-    }
+
+  // If touchscreen listen for touch, if not listen for click
+  var hitEvent = 'ontouchstart' in document.documentElement ? 'touchstart' : 'click';
+
+  $('.menu').on(hitEvent, function(event) {
+    event.preventDefault();
+    $('.nav-link').addClass('nav-show');
+  });
+
+  $('.content').on(hitEvent, function() {
+    $('.nav-link').removeClass('nav-show');
   });
 });

@@ -1,12 +1,51 @@
-var mountFolder = function (connect, dir) {
-  return connect.static(require('path').resolve(dir));
-};
-
 module.exports = function (grunt) {
 
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-
   grunt.initConfig({
+    pages: {
+      options: {
+        pageSrc: 'src/pages',
+        data: {
+          baseUrl: '/'
+        }
+      },
+      posts: {
+        src: 'posts',
+        dest: 'dist',
+        layout: 'src/layouts/post.jade',
+        url: 'posts/:title/',
+        options: {
+          pagination: {
+            postsPerPage: 2,
+            listPage: 'src/pages/index.jade'
+          }
+        }
+      }
+    },
+    compass: {
+      dist: {
+        options: {
+          sassDir: 'src/styles',
+          cssDir: 'dist/styles'
+        }
+      }
+    },
+    // Move files not handled by other tasks
+    copy: {
+      dist: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: 'src',
+          dest: 'dist',
+          src: [
+            'images/**',
+            'scripts/**',
+            'styles/**.css',
+            'styles/fonts/**',
+          ]
+        }]
+      }
+    },
     watch: {
       dist: {
         files: ['dist/**'],
@@ -14,35 +53,26 @@ module.exports = function (grunt) {
           livereload: true
         }
       },
-      
       compass: {
         files: ['src/styles/**'],
         tasks: ['compass']
       },
       pages: {
-        files: ['src/pages/**', 'posts/**', 'src/layouts/**'],
+        files: [
+          'posts/**',
+          'src/layouts/**',
+          'src/pages/**'
+        ],
         tasks: ['pages']
       },
       copy: {
-        files: ['src/images/**', 'src/styles/**.css', 'src/styles/fonts/**', 'src/scripts/**'],
+        files: [
+          'src/images/**',
+          'src/scripts/**',
+          'src/styles/**.css',
+          'src/styles/fonts/**'
+        ],
         tasks: ['copy']
-      }
-    },
-    pages: {
-      options: {
-        pageSrc: 'src/pages'
-      },
-      posts: {
-        src: 'posts',
-        dest: 'dist',
-        layout: 'src/layouts/post.jade',
-        url: ':title',
-        options: {
-          pagination: {
-            postsPerPage: 1,
-            listPage: 'src/pages/index.jade'
-          }
-        }
       }
     },
     connect: {
@@ -53,8 +83,7 @@ module.exports = function (grunt) {
           middleware: function (connect) {
             return [
               require('grunt-contrib-livereload/lib/utils').livereloadSnippet,
-              mountFolder(connect, 'dist'),
-              mountFolder(connect, 'src')
+              connect.static(require('path').resolve('dist'))
             ];
           }
         }
@@ -67,37 +96,13 @@ module.exports = function (grunt) {
     },
     clean: {
       dist: 'dist'
-    },
-    compass: {
-      options: {
-        sassDir: 'src/styles',
-        cssDir: 'dist/styles'
-      },
-      dist: {}
-    },
-    // Move files not handled by other tasks
-    copy: {
-      dist: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: 'src',
-          dest: 'dist',
-          src: [
-            'images/**',
-            'styles/**.css',
-            'styles/fonts/**',
-            'scripts/**'
-          ]
-        }]
-      }
     }
   });
 
   grunt.registerTask('build', [
     'clean',
-    'compass',
     'pages',
+    'compass',
     'copy'
   ]);
 
@@ -109,4 +114,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', 'server');
+
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 };
