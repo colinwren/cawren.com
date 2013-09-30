@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/images/cabin.png">
+    <link href="/styles/main.css" rel="stylesheet">
+    <title>My Blog</title>
+  </head>
+  <body>
+    <ul class="nav group">
+      <li class="icon-menu menu"></li>
+      <li class="nav-link red active"><a href="/" class="name">Colin Wren</a></li>
+      <li class="nav-link blue"><a href="/about.html">about</a></li>
+      <li class="nav-link orange"><a href="/projects.html">projects</a></li>
+      <li class="nav-link green"><a href="/archives.html">archives</a></li>
+    </ul>
+    <div class="content">
+      <div class="post">
+        <div class="post-head group"><a href="/posts/four-awesome-command-line-tools/">
+            <h1 class="post-title">Four Awesome Command Line Tools</h1></a>
+          <h2 class="post-date">Published&nbsp<abbr title="2013-05-02T07:00:00.000Z" class="timeago"></abbr></h2>
+        </div>
+        <div class="post-body"><h1><a name="-httpie-http-httpie-org-"class="anchor" href="#-httpie-http-httpie-org-"><span class="header-link"></span></a><a href="http://httpie.org/">HTTPie</a></h1>
+<p>HTTPie is a command line HTTP client that has an intuitive UI and syntax highlighting of responses.
+ The command syntax is simple, it&#39;s just <code>http</code> followed by the HTTP request method. Running <code>http get www.google.com</code> will fetch and log the Google homepage with syntax highlighting <em>(In this case <code>http www.google.com</code> would suffice since <code>GET</code> is the default method)</em>.</p>
+<h3><a name="example-usage-"class="anchor" href="#example-usage-"><span class="header-link"></span></a>Example usage:</h3>
+<p><img src="https://i.cloudup.com/mZRizmcZTT.png"></p>
+<h1><a name="-silver-searcher-https-github-com-ggreer-the_silver_searcher-"class="anchor" href="#-silver-searcher-https-github-com-ggreer-the_silver_searcher-"><span class="header-link"></span></a><a href="https://github.com/ggreer/the_silver_searcher">Silver searcher</a></h1>
+<p>Silver searcher is an insanely quick code searching tool with a similar UI to 
+<a href="http://beyondgrep.com/">ack</a>. The format of the output is very clear and it
+searches are executed instantaneously even on large codebases.</p>
+<h3><a name="search-results-"class="anchor" href="#search-results-"><span class="header-link"></span></a>Search results:</h3>
+<p><img src="https://i.cloudup.com/AsespBYJAQ.png"></p>
+<h3><a name="speed"class="anchor" href="#speed"><span class="header-link"></span></a>Speed</h3>
+<p>A search for <code>model</code> in the root  of the <a href="https://github.com/rails/rails">Rails</a> code base with both <code>ack</code> and <code>ag</code> (silver surfer command) on my MacBook Air yielded these results:</p>
+<pre><code class="lang-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">time </span>ag model  <span class="p">|</span> <span class="nv">$ </span><span class="nb">time </span>ack model
+real    0m0.217s <span class="p">|</span> real    0m2.078s
+user    0m0.111s <span class="p">|</span> user    0m1.559s
+sys     0m0.119s <span class="p">|</span> sys     0m0.305s
+</pre></div>
+</code></pre>
+<h1><a name="-hub-https-github-com-github-hub-"class="anchor" href="#-hub-https-github-com-github-hub-"><span class="header-link"></span></a><a href="https://github.com/github/hub">Hub</a></h1>
+<p>Hub is a command line wrapper for git that adds <a href="https://github.com/">GitHub</a>
+ specific functionality such as fetching pull request branches, and creating pull requests. After installing hub and aliasing <code>git</code> to <code>hub</code> by putting
+<code>alias git=hub</code> in your <code>.bashrc</code>, you can omit most parts of the URLs you are specifying when using <code>git</code> commands like clone, for example:</p>
+<pre><code class="lang-bash"><div class="highlight"><pre>git clone https://github.com/CabinJS/Cabin.git
+</pre></div>
+</code></pre>
+<p>Works the same as:</p>
+<pre><code class="lang-bash"><div class="highlight"><pre>git clone CabinJS/Cabin
+</pre></div>
+</code></pre>
+<h3><a name="some-particularly-useful-commands-"class="anchor" href="#some-particularly-useful-commands-"><span class="header-link"></span></a>Some particularly useful commands:</h3>
+<ul>
+<li><code>git fork</code> - Make a fork of a remote repository on GitHub and add as remote</li>
+<li><code>git create</code> - Create this repository on GitHub and add GitHub as origin</li>
+<li><code>git browse</code> - Open a GitHub page in the default browser</li>
+</ul>
+<h1><a name="tree"class="anchor" href="#tree"><span class="header-link"></span></a>Tree</h1>
+<p>Tree is a tool for visualizing directory structures. It&#39;s great for creating visualizations of project structures to use in documentation or GitHub issues.</p>
+<h3><a name="command-output"class="anchor" href="#command-output"><span class="header-link"></span></a>Command output</h3>
+<p><img src="https://i.cloudup.com/07lIDF0jBy.png">
+ If it is not already installed you can install it with the package manager for your OS.</p>
+<pre><code class="lang-bash"><div class="highlight"><pre><span class="c"># OSX</span>
+brew install tree
+<span class="c"># Ubuntu</span>
+sudo apt-get install tree
+</pre></div>
+</code></pre>
+</div>
+        <div class="comments"><a href="/posts/four-awesome-command-line-tools/#comments"><span class="icon-bubbles"></span>Comments</a></div>
+      </div>
+      <div class="post">
+        <div class="post-head group"><a href="/posts/backbone-collection-view/">
+            <h1 class="post-title">Backbone.Collection View</h1></a>
+          <h2 class="post-date">Published&nbsp<abbr title="1970-01-01T00:00:01.993Z" class="timeago"></abbr></h2>
+        </div>
+        <div class="post-body"><p>Backbone classes that are used to render views and manage events for a
+collection of models are common. They all render model
+views, listen to a collection for events, and have assorted methods to manage
+model views. These classes tend to be one of the largest sources of non-<a href="http://en.wikipedia.org/wiki/Don&#39;t_repeat_yourself">DRY</a> code
+in Backbone apps. Thats why having a solid base class for these views like
+Backbone.CollectionView is indispensable.</p>
+<p><a href="http://rotundasoftware.github.io/backbone.collectionView/">Backbone.CollectionView</a>
+extends Backbone&#39;s view class, it adds default functionality and options that make
+it much easier to create awesome user experiences while keeping your code DRY. I&#39;ll go
+over some of its features and compare some code using Backbone.CollectionView
+to the equivalent implementation in vanilla Backbone. Check out the <a href="http://rotundasoftware.github.io/backbone.collectionView/">demo page</a>
+for examples along with the code used to implement them.</p>
+<h2><a name="features"class="anchor" href="#features"><span class="header-link"></span></a>Features</h2>
+<h3><a name="automatic-model-view-rendering"class="anchor" href="#automatic-model-view-rendering"><span class="header-link"></span></a>Automatic model view rendering</h3>
+<p>When initialized, a view that inherits from Backbone.CollectionView will automatically render a view for
+each model in the provided collection. It will also start listening
+to its collection to ensure that the model views are re-rendered correctly when the
+collection changes.</p>
+<h3><a name="selectable"class="anchor" href="#selectable"><span class="header-link"></span></a>Selectable</h3>
+<p>Backbone.CollectionView provides
+a very nice way to create a list of selectable items through its <code>selectable</code> option. The default
+behavior is to have models be selected when their corresponding view is clicked.
+By default, only one model is selectable at a time, if you want to give users
+the ability to select multiple models there is the <code>selectMultiple</code> option.</p>
+<p>Along with making it easy to provide a user interface for selecting models,
+Backbone.CollectionView exposes an intuitive API for managing model selection.
+Whenever the selection is changed the view fires a <code>selectionChanged</code> event
+that passes the new and old models to the handler. The view has necessary methods like
+<code>getSelectedModels</code> and <code>setSelectedModel</code> which are self explanatory. You
+can <code>get</code> and <code>set</code> by the <code>data-id</code>, <code>cid</code>, <code>offset</code> (index of model view in all
+visible model views), and by the <code>view</code> that the model is attached to.</p>
+<h3><a name="sortable"class="anchor" href="#sortable"><span class="header-link"></span></a>Sortable</h3>
+<p>Backbone.CollectionView also provides a <code>sortable</code> option which uses jQuery
+UI&#39;s <a href="http://jqueryui.com/sortable/">sortable interaction</a> to enable drag and
+drop sorting on your model views, if you haven&#39;t checked it out I highly
+recommend doing so. It provides a powerful API for managing drag and drop sorting
+(something that requires a ton of code to implement by hand) and is reliable as
+anything you would expect to come out of the jQuery project. It&#39;s great to be able
+to utilize this interaction seamlessly though Backbone.CollectionView.</p>
+<h2><a name="comparison"class="anchor" href="#comparison"><span class="header-link"></span></a>Comparison</h2>
+<p>It is often the case that you need a class that manages the rendering of a view
+for each model in its collection. The examples below are of classes that provide this
+functionality, the first inherits from the Backbone base view class
+and the second inherits from the Backbone.CollectionView class. I also added
+functionality to add a model (and its corresponding view) to the collection to
+show that the class that inherits from Backbone.CollectionView listens to its collection and handles the
+re-rendering for you.</p>
+<h3><a name="inheriting-from-backbone-view"class="anchor" href="#inheriting-from-backbone-view"><span class="header-link"></span></a>Inheriting from Backbone.View</h3>
+<pre><code class="lang-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">TodosView</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="nx">el</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#todo-container&#39;</span><span class="p">),</span>
+
+  <span class="nx">events</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s1">&#39;click #create-todo&#39;</span><span class="o">:</span> <span class="s1">&#39;createTodo&#39;</span>
+  <span class="p">},</span>
+
+  <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">collection</span><span class="o">:</span> <span class="k">new</span> <span class="nx">TodosCollection</span><span class="p">(),</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">listenTo</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">collection</span><span class="p">,</span> <span class="s1">&#39;add&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">addOne</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+  <span class="p">},</span>
+
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">addAll</span><span class="p">();</span>
+  <span class="p">},</span>
+
+  <span class="nx">addAll</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#todo-list&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">collection</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">addOne</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+  <span class="p">},</span>
+
+  <span class="nx">addOne</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">todo</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">view</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TodoView</span><span class="p">({</span><span class="nx">model</span><span class="o">:</span> <span class="nx">todo</span><span class="p">});</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#todo-list&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">view</span><span class="p">.</span><span class="nx">render</span><span class="p">().</span><span class="nx">el</span><span class="p">);</span>
+  <span class="p">},</span>
+
+  <span class="nx">createTodo</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">collection</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;newTodo&#39;</span><span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</code></pre>
+<h3><a name="inheriting-from-backbone-collectionview"class="anchor" href="#inheriting-from-backbone-collectionview"><span class="header-link"></span></a>Inheriting from Backbone.CollectionView</h3>
+<pre><code class="lang-javascript"><div class="highlight"><pre> <span class="kd">var</span> <span class="nx">TodosView</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">CollectionView</span><span class="p">({</span>
+  <span class="nx">el</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#todo-container&#39;</span><span class="p">),</span>
+  <span class="nx">collection</span><span class="o">:</span> <span class="k">new</span> <span class="nx">TodosCollection</span><span class="p">(),</span>
+  <span class="nx">modelView</span><span class="o">:</span> <span class="nx">TodoView</span><span class="p">,</span>
+
+  <span class="nx">events</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s1">&#39;click #create-todo&#39;</span><span class="o">:</span> <span class="s1">&#39;createTodo&#39;</span>
+  <span class="p">},</span>
+
+  <span class="nx">createTodo</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">collection</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;newTodo&#39;</span><span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</code></pre>
+</div>
+        <div class="comments"><a href="/posts/backbone-collection-view/#comments"><span class="icon-bubbles"></span>Comments</a></div>
+      </div>
+      <div class="pagination group">
+      </div>
+    </div><a href="http://cabinjs.com"><img src="/images/cabin.png" class="cabin"></a>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.1.0/jquery.timeago.min.js" type="text/javascript"></script>
+    <script src="/scripts/main.js" type="text/javascript"></script>
+    <script>// Add your analytics code here</script>
+  </body>
+</html>
