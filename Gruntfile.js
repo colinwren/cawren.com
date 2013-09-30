@@ -96,6 +96,12 @@ module.exports = function (grunt) {
     },
     clean: {
       dist: 'dist'
+    },
+    'gh-pages': {
+      options: {
+        base: 'dist'
+      },
+      src: ['**']
     }
   });
 
@@ -112,6 +118,12 @@ module.exports = function (grunt) {
     'open',
     'watch'
   ]);
+
+  grunt.registerTask('deploy', [
+    'build',
+    'gh-pages'
+  ]);
+
 
   grunt.registerTask('default', 'server');
 

@@ -1,7 +1,7 @@
-----
-title: CSS resources
-date: 2013-5-2
-----
+{
+  title: "CSS resources",
+  date: "2013-5-2"
+}
 This post is the list of Intermediate-Advanced CSS resourcses which I would loved to have had during my progression as a CSS developer. Most of these resources assume the reader has a good understanding of basic CSS, they focus on techniques and patterns that help you produce maintainable, bug-free, and performant CSS.
 
 There are 4 people in particular who have contributed a ton to the CSS community, I'll give each a short introduction and go over some of their most important contributions.
