@@ -1,4 +1,5 @@
 .nav {
+  list-style: none;
   position:fixed;
   z-index: 100;
   width: 250px;
@@ -53,7 +54,7 @@
 
 
 .menu {
-  width: 124px;
+  width: 135px;
   padding: 5px;
   display: none;
   position: absolute;
@@ -64,6 +65,10 @@
 
   @include breakpoint(big-phone) {
     display: block;
+  }
+
+  @include breakpoint(small-phone) {
+    width: 124px;
   }
 }
 
