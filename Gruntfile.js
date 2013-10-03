@@ -67,6 +67,7 @@ module.exports = function (grunt) {
       },
       copy: {
         files: [
+          'CNAME',
           'src/images/**',
           'src/scripts/**',
           'src/styles/**.css',
