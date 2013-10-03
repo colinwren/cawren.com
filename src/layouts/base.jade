@@ -2,8 +2,7 @@ mixin postHead(post)
   .post-head.group
     a(href="#{data.baseUrl}#{post.url}")
       h1.post-title= post.title
-    h2.post-date Published&nbsp
-      abbr.timeago(title="#{post.date.toISOString()}")
+    h2.post-date= "Published " + post.date.toLocaleDateString("en-US").split(",").slice(1).join(",").split(" 0").join(" ")
 
 mixin post(post)
   mixin postHead(post)
@@ -16,7 +15,7 @@ mixin nav(current)
       a.name(href="#{data.baseUrl}") Colin Wren
     li.nav-link.blue(class= current === "about" ? "active" : "")
       a(href="#{data.baseUrl}about.html") about
-    li.nav-link.orange(class= current === "projects" ? "active" : "")
+    //-li.nav-link.orange(class= current === "projects" ? "active" : "")
       a(href="#{data.baseUrl}projects.html") projects
     li.nav-link.green(class= current === "archives" ? "active" : "")
       a(href="#{data.baseUrl}archives.html") archives

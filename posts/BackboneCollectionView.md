@@ -1,6 +1,6 @@
 {
   title: "Backbone.Collection View",
-  date:   2013-5-15
+  date:   "2013-5-15"
 }
 Backbone classes that are used to render views and manage events for a
 collection of models are common. They all render model

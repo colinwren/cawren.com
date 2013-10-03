@@ -4,5 +4,12 @@ block title
 block nav
   mixin nav('about')
 block content
-  .post
-    p My name is Colin Wren and I'm a web developer located in the San Francisco bay area. If you'd like to get in touch, you can reach me through my Email, GitHub, or Twitter.
+  .post.group
+    img.colin(src="https://i.cloudup.com/banQWCT9M8.jpg")
+    h1.about-name Colin Wren
+    p.intro My name is Colin Wren and I'm a web developer located in the San Francisco bay area. If you'd like to get in touch, you can reach me through my 
+
+      a(href="mailto:colinwrenca@gmail.com") Email, 
+      a(href="https://github.com/colinwren") GitHub, 
+      | or 
+      a(href="https://twitter.com/colinwrenca") Twitter

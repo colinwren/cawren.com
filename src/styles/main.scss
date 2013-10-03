@@ -1,9 +1,15 @@
 @import 'compass';
 
+// Vendor
 @import 'normalize';
 @import 'solarized-dark';
 @import 'icons';
+
+// General
 @import 'base';
 @import 'markdown';
 @import 'nav';
 @import 'post';
+
+// Page
+@import 'about';

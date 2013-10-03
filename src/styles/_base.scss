@@ -24,7 +24,13 @@ $linkColor: $blueGrey;
 
 @mixin shadow($color) {
   background: $color;
-  @include box-shadow( 5px 5px desaturate(darken($color, 10), 20));
+  @include box-shadow(
+    5px 5px desaturate(darken($color, 10), 20),
+    4px 4px desaturate(darken($color, 10), 20),
+    3px 3px desaturate(darken($color, 10), 20),
+    2px 2px desaturate(darken($color, 10), 20),
+    1px 1px desaturate(darken($color, 10), 20)
+  );
 }
 
 .group:after {
