@@ -12,27 +12,36 @@
       <li class="icon-menu menu"></li>
       <li class="nav-link red active"><a href="/" class="name">Colin Wren</a></li>
       <li class="nav-link blue"><a href="/about.html">about</a></li>
-      <li class="nav-link orange"><a href="/projects.html">projects</a></li>
       <li class="nav-link green"><a href="/archives.html">archives</a></li>
     </ul>
     <div class="content">
       <div class="post">
-        <div class="post-head group"><a href="/posts/four-awesome-command-line-tools/">
-            <h1 class="post-title">Four Awesome Command Line Tools</h1></a>
-          <h2 class="post-date">Published&nbsp<abbr title="2013-05-02T07:00:00.000Z" class="timeago"></abbr></h2>
+        <div class="post-head group"><a href="/posts/four-essential-command-line-tools/">
+            <h1 class="post-title">Four Essential Command Line Tools</h1></a>
+          <h2 class="post-date">Published  October 2, 2013</h2>
         </div>
         <div class="post-body markdown"><h1><a name="-httpie-http-httpie-org-"class="anchor" href="#-httpie-http-httpie-org-"><span class="header-link"></span></a><a href="http://httpie.org/">HTTPie</a></h1>
-<p>HTTPie is a command line HTTP client that has an intuitive UI and syntax highlighting of responses.
- The command syntax is simple, it&#39;s just <code>http</code> followed by the HTTP request method. Running <code>http get www.google.com</code> will fetch and log the Google homepage with syntax highlighting <em>(In this case <code>http www.google.com</code> would suffice since <code>GET</code> is the default method)</em>.</p>
-<h3><a name="example-usage-"class="anchor" href="#example-usage-"><span class="header-link"></span></a>Example usage:</h3>
-<p><img src="https://i.cloudup.com/mZRizmcZTT.png"></p>
+<p>HTTPie is a command line HTTP client with an intuitive interface and syntax highlighting of responses.
+<img src="https://i.cloudup.com/mZRizmcZTT.png" width="100%">
+The command syntax is very straightforward, it&#39;s just <code>http</code> followed by the HTTP request method. Running:</p>
+<pre><code class="lang-bash"><div class="highlight"><pre>http get www.google.com
+</pre></div>
+</code></pre>
+<p>will fetch Google homepage and log it with syntax highlighting.</p>
+<p><em>Note: In this case <code>http www.google.com</code> would suffice since <code>GET</code> is the default method.</em></p>
+<p>How about sending a POST request with some form data?</p>
+<pre><code class="lang-bash"><div class="highlight"><pre>http -f post www.reddit.com/login <span class="nv">username</span><span class="o">=</span>colinwren <span class="nv">password</span><span class="o">=</span>**
+</pre></div>
+</code></pre>
 <h1><a name="-silver-searcher-https-github-com-ggreer-the_silver_searcher-"class="anchor" href="#-silver-searcher-https-github-com-ggreer-the_silver_searcher-"><span class="header-link"></span></a><a href="https://github.com/ggreer/the_silver_searcher">Silver searcher</a></h1>
 <p>Silver searcher is an insanely quick code searching tool with a similar UI to 
-<a href="http://beyondgrep.com/">ack</a>. The format of the output is very clear and it
-searches are executed instantaneously even on large codebases.</p>
+<a href="http://beyondgrep.com/">ack</a>. The output of the search displays the
+results in a clear and quickly readable format.</p>
 <h3><a name="search-results-"class="anchor" href="#search-results-"><span class="header-link"></span></a>Search results:</h3>
-<p><img src="https://i.cloudup.com/AsespBYJAQ.png"></p>
+<p><img src="https://i.cloudup.com/AsespBYJAQ.png" width="100%"></p>
 <h3><a name="speed"class="anchor" href="#speed"><span class="header-link"></span></a>Speed</h3>
+<p>Silver searcher prides itself on speed, it is written in C and claims to be &quot;3–5× faster than ack&quot;.
+Searches are executed instantaneously even on large codebases.</p>
 <p>A search for <code>model</code> in the root  of the <a href="https://github.com/rails/rails">Rails</a> code base with both <code>ack</code> and <code>ag</code> (silver surfer command) on my MacBook Air yielded these results:</p>
 <pre><code class="lang-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">time </span>ag model  <span class="p">|</span> <span class="nv">$ </span><span class="nb">time </span>ack model
 real    0m0.217s <span class="p">|</span> real    0m2.078s
@@ -42,13 +51,12 @@ sys     0m0.119s <span class="p">|</span> sys     0m0.305s
 </code></pre>
 <h1><a name="-hub-https-github-com-github-hub-"class="anchor" href="#-hub-https-github-com-github-hub-"><span class="header-link"></span></a><a href="https://github.com/github/hub">Hub</a></h1>
 <p>Hub is a command line wrapper for git that adds <a href="https://github.com/">GitHub</a>
- specific functionality such as fetching pull request branches, and creating pull requests. After installing hub and aliasing <code>git</code> to <code>hub</code> by putting
+ specific functionality such as fetching pull request branches, and creating pull requests.</p>
+<p>After installing hub and aliasing <code>git</code> to <code>hub</code> by putting
 <code>alias git=hub</code> in your <code>.bashrc</code>, you can omit most parts of the URLs you are specifying when using <code>git</code> commands like clone, for example:</p>
 <pre><code class="lang-bash"><div class="highlight"><pre>git clone https://github.com/CabinJS/Cabin.git
-</pre></div>
-</code></pre>
-<p>Works the same as:</p>
-<pre><code class="lang-bash"><div class="highlight"><pre>git clone CabinJS/Cabin
+<span class="c"># Works the same as:</span>
+git clone CabinJS/Cabin
 </pre></div>
 </code></pre>
 <h3><a name="some-particularly-useful-commands-"class="anchor" href="#some-particularly-useful-commands-"><span class="header-link"></span></a>Some particularly useful commands:</h3>
@@ -58,9 +66,9 @@ sys     0m0.119s <span class="p">|</span> sys     0m0.305s
 <li><code>git browse</code> - Open a GitHub page in the default browser</li>
 </ul>
 <h1><a name="tree"class="anchor" href="#tree"><span class="header-link"></span></a>Tree</h1>
-<p>Tree is a tool for visualizing directory structures. It&#39;s great for creating visualizations of project structures to use in documentation or GitHub issues.</p>
+<p>Tree is a tool for visualizing directory structures. It&#39;s great for creating text based diagrams of project structures to use in documentation or GitHub issues.</p>
 <h3><a name="command-output"class="anchor" href="#command-output"><span class="header-link"></span></a>Command output</h3>
-<p><img src="https://i.cloudup.com/07lIDF0jBy.png">
+<p><img src="https://i.cloudup.com/07lIDF0jBy.png" width="100%">
  If it is not already installed you can install it with the package manager for your OS.</p>
 <pre><code class="lang-bash"><div class="highlight"><pre><span class="c"># OSX</span>
 brew install tree
@@ -69,12 +77,12 @@ sudo apt-get install tree
 </pre></div>
 </code></pre>
 </div>
-        <div class="comments"><a href="/posts/four-awesome-command-line-tools/#comments"><span class="icon-bubbles"></span>Comments</a></div>
+        <div class="comments"><a href="/posts/four-essential-command-line-tools/#comments"><span class="icon-bubbles"></span>Comments</a></div>
       </div>
       <div class="post">
         <div class="post-head group"><a href="/posts/backbone-collection-view/">
             <h1 class="post-title">Backbone.Collection View</h1></a>
-          <h2 class="post-date">Published&nbsp<abbr title="1970-01-01T00:00:01.993Z" class="timeago"></abbr></h2>
+          <h2 class="post-date">Published  May 15, 2013</h2>
         </div>
         <div class="post-body markdown"><p>Backbone classes that are used to render views and manage events for a
 collection of models are common. They all render model
