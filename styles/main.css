@@ -958,9 +958,9 @@ a {
   position: fixed;
   right: 0.5em;
   bottom: 0.2em;
-  width: 1.8em;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
-  opacity: 0.2;
+  width: 2.2em;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
 }
 /* line 127, ../../src/styles/_base.scss */
 .cabin:hover {
@@ -1281,23 +1281,26 @@ code {
 /* line 1, ../../src/styles/_about.scss */
 .colin {
   width: 220px;
-  /*@include border-radius(50%);*/
-  background: #999999;
-  -webkit-box-shadow: 5px 5px gray, 4px 4px gray, 3px 3px gray, 2px 2px gray, 1px 1px gray;
-  -moz-box-shadow: 5px 5px gray, 4px 4px gray, 3px 3px gray, 2px 2px gray, 1px 1px gray;
-  box-shadow: 5px 5px gray, 4px 4px gray, 3px 3px gray, 2px 2px gray, 1px 1px gray;
+  background: #cccccc;
+  -webkit-box-shadow: 5px 5px #b3b3b3, 4px 4px #b3b3b3, 3px 3px #b3b3b3, 2px 2px #b3b3b3, 1px 1px #b3b3b3;
+  -moz-box-shadow: 5px 5px #b3b3b3, 4px 4px #b3b3b3, 3px 3px #b3b3b3, 2px 2px #b3b3b3, 1px 1px #b3b3b3;
+  box-shadow: 5px 5px #b3b3b3, 4px 4px #b3b3b3, 3px 3px #b3b3b3, 2px 2px #b3b3b3, 1px 1px #b3b3b3;
   float: left;
   margin: 0 30px 20px 0;
 }
 
-/* line 9, ../../src/styles/_about.scss */
+/* line 8, ../../src/styles/_about.scss */
 .about-name {
   font-size: 3.4em;
   margin: 0 0 .2em;
   text-align: center;
 }
 
-/* line 15, ../../src/styles/_about.scss */
+/* line 14, ../../src/styles/_about.scss */
 .intro {
   font-size: 1.2em;
+}
+/* line 17, ../../src/styles/_about.scss */
+.intro a {
+  color: #4d91d5;
 }
