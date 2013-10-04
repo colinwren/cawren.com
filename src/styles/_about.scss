@@ -1,7 +1,6 @@
 .colin {
   width: 220px;
-  /*@include border-radius(50%);*/
-  @include shadow(hsl(0, 0%, 60%));
+  @include shadow(hsl(0, 0%, 80%));
   float: left;
   margin: 0 30px 20px 0 ;
 }
@@ -15,4 +14,7 @@
 .intro {
   font-size: 1.2em;
 
+  a {
+    color: $linkColor;
+  }
 }
