@@ -67,7 +67,7 @@ Tree is a tool for visualizing directory structures. It's great for creating tex
 ### Command output
 
 <img src="https://i.cloudup.com/07lIDF0jBy.png" width="100%">
- If it is not already installed you can install it with the package manager for your OS.
+ If it is not already installed, you can install it with the package manager for your OS.
 ```bash
 # OSX
 brew install tree
