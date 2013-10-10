@@ -21,7 +21,8 @@
           <h2 class="post-date">Published  October 2, 2013</h2>
         </div>
         <div class="post-body markdown"><h1><a name="-httpie-http-httpie-org-"class="anchor" href="#-httpie-http-httpie-org-"><span class="header-link"></span></a><a href="http://httpie.org/">HTTPie</a></h1>
-<p>HTTPie is a command line HTTP client with an intuitive interface and syntax highlighting of responses.
+<p>HTTPie is a command line HTTP client with an intuitive interface and syntax highlighting of responses.</p>
+<p>Here is an example of the output produced by making a <code>GET</code> request to a JSON API:
 <img src="https://i.cloudup.com/mZRizmcZTT.png" width="100%">
 The command syntax is very straightforward, it&#39;s just <code>http</code> followed by the HTTP request method. Running:</p>
 <pre><code class="lang-bash"><div class="highlight"><pre>http get www.google.com
@@ -33,12 +34,16 @@ The command syntax is very straightforward, it&#39;s just <code>http</code> foll
 <pre><code class="lang-bash"><div class="highlight"><pre>http -f post www.reddit.com/login <span class="nv">username</span><span class="o">=</span>colinwren <span class="nv">password</span><span class="o">=</span>**
 </pre></div>
 </code></pre>
+<p><strong>Install HTTPie <a href="https://github.com/jkbr/httpie#installation">here</a>.</strong></p>
 <h1><a name="-silver-searcher-https-github-com-ggreer-the_silver_searcher-"class="anchor" href="#-silver-searcher-https-github-com-ggreer-the_silver_searcher-"><span class="header-link"></span></a><a href="https://github.com/ggreer/the_silver_searcher">Silver searcher</a></h1>
 <p>Silver searcher is an insanely quick code searching tool with a similar UI to 
 <a href="http://beyondgrep.com/">ack</a>. The output of the search displays the
 results in a clear and quickly readable format.</p>
-<h3><a name="search-results-"class="anchor" href="#search-results-"><span class="header-link"></span></a>Search results:</h3>
-<p><img src="https://i.cloudup.com/AsespBYJAQ.png" width="100%"></p>
+<p>Here is an example of the output produced by searching for <code>eventBus</code> in the
+<a href="http://twitter.github.io/typeahead.js/">typeahead.js</a> codebase:
+<img src="https://i.cloudup.com/AsespBYJAQ.png" width="100%">
+<em>The silver searcher command is <code>ag</code> because <code>ag</code> is the element symbol for
+silver.</em></p>
 <h3><a name="speed"class="anchor" href="#speed"><span class="header-link"></span></a>Speed</h3>
 <p>Silver searcher prides itself on speed, it is written in C and claims to be &quot;3–5× faster than ack&quot;.
 Searches are executed instantaneously even on large codebases.</p>
@@ -49,14 +54,15 @@ user    0m0.111s <span class="p">|</span> user    0m1.559s
 sys     0m0.119s <span class="p">|</span> sys     0m0.305s
 </pre></div>
 </code></pre>
+<p><strong>Install Silver searcher <a href="https://github.com/ggreer/the_silver_searcher#installation">here</a>.</strong></p>
 <h1><a name="-hub-https-github-com-github-hub-"class="anchor" href="#-hub-https-github-com-github-hub-"><span class="header-link"></span></a><a href="https://github.com/github/hub">Hub</a></h1>
 <p>Hub is a command line wrapper for git that adds <a href="https://github.com/">GitHub</a>
  specific functionality such as fetching pull request branches, and creating pull requests.</p>
 <p>After installing hub and aliasing <code>git</code> to <code>hub</code> by putting
 <code>alias git=hub</code> in your <code>.bashrc</code>, you can omit most parts of the URLs you are specifying when using <code>git</code> commands like clone, for example:</p>
-<pre><code class="lang-bash"><div class="highlight"><pre>git clone https://github.com/CabinJS/Cabin.git
+<pre><code class="lang-bash"><div class="highlight"><pre>git clone CabinJS/Cabin
 <span class="c"># Works the same as:</span>
-git clone CabinJS/Cabin
+git clone https://github.com/CabinJS/Cabin.git
 </pre></div>
 </code></pre>
 <h3><a name="some-particularly-useful-commands-"class="anchor" href="#some-particularly-useful-commands-"><span class="header-link"></span></a>Some particularly useful commands:</h3>
@@ -65,11 +71,36 @@ git clone CabinJS/Cabin
 <li><code>git create</code> - Create this repository on GitHub and add GitHub as origin</li>
 <li><code>git browse</code> - Open a GitHub page in the default browser</li>
 </ul>
+<p><strong>Install Hub <a href="https://github.com/github/hub#installation">here</a>.</strong></p>
 <h1><a name="tree"class="anchor" href="#tree"><span class="header-link"></span></a>Tree</h1>
-<p>Tree is a tool for visualizing directory structures. It&#39;s great for creating text based diagrams of project structures to use in documentation or GitHub issues.</p>
+<p>Tree is a tool for visualizing directory structures. It&#39;s great for creating text based diagrams of folder structures that are easily shareable.</p>
 <h3><a name="command-output"class="anchor" href="#command-output"><span class="header-link"></span></a>Command output</h3>
-<p><img src="https://i.cloudup.com/07lIDF0jBy.png" width="100%">
- If it is not already installed, you can install it with the package manager for your OS.</p>
+<p>Here is an example of the output produced by running <code>tree</code> in the
+<a href="http://twitter.github.io/typeahead.js/">typeahead.js</a> codebase:
+<img src="https://i.cloudup.com/07lIDF0jBy.png" width="100%"></p>
+<p>Since the output is just text, we can copy and paste it anywhere. This is great
+for GitHub issues and documentation.</p>
+<pre><code><div class="highlight"><pre><span class="nx">test</span>
+<span class="err">├──</span> <span class="nx">dataset_spec</span><span class="p">.</span><span class="nx">js</span>
+<span class="err">├──</span> <span class="nx">dropdown_view_spec</span><span class="p">.</span><span class="nx">js</span>
+<span class="err">├──</span> <span class="nx">event_target_spec</span><span class="p">.</span><span class="nx">js</span>
+<span class="err">├──</span> <span class="nx">helpers</span>
+<span class="err">│</span>   <span class="err">├──</span> <span class="nx">jasmine</span><span class="o">-</span><span class="nx">jquery</span><span class="p">.</span><span class="nx">js</span>
+<span class="err">│</span>   <span class="err">├──</span> <span class="nx">mock</span><span class="o">-</span><span class="nx">ajax</span><span class="p">.</span><span class="nx">js</span>
+<span class="err">│</span>   <span class="err">└──</span> <span class="nx">mock_components</span><span class="p">.</span><span class="nx">js</span>
+<span class="err">├──</span> <span class="nx">input_view_spec</span><span class="p">.</span><span class="nx">js</span>
+<span class="err">├──</span> <span class="nx">persistent_storage_spec</span><span class="p">.</span><span class="nx">js</span>
+<span class="err">├──</span> <span class="nx">playground</span><span class="p">.</span><span class="nx">html</span>
+<span class="err">├──</span> <span class="nx">request_cache_spec</span><span class="p">.</span><span class="nx">js</span>
+<span class="err">├──</span> <span class="nx">transport_spec</span><span class="p">.</span><span class="nx">js</span>
+<span class="err">├──</span> <span class="nx">typeahead_view_spec</span><span class="p">.</span><span class="nx">js</span>
+<span class="err">└──</span> <span class="nx">vendor</span>
+    <span class="err">├──</span> <span class="nx">hogan</span><span class="o">-</span><span class="mf">2.0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="nx">js</span>
+        <span class="err">└──</span> <span class="nx">jquery</span><span class="o">-</span><span class="mf">1.9</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="nx">js</span>
+</pre></div>
+</code></pre>
+<h2><a name="install-tree"class="anchor" href="#install-tree"><span class="header-link"></span></a>Install Tree</h2>
+<p> If it is not already installed, you can install it with the package manager for your OS.</p>
 <pre><code class="lang-bash"><div class="highlight"><pre><span class="c"># OSX</span>
 brew install tree
 <span class="c"># Ubuntu</span>
