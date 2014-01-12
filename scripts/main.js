@@ -9,4 +9,4 @@ window.setTimeout(function(){
         opacity: 1
       })
   })
-}, 4800)
+}, 5800)
