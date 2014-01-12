@@ -49,6 +49,7 @@ module.exports = (grunt) ->
             'scripts/*'
             '*.{png,html}'
             '.htaccess'
+            'CNAME'
           ]
         }]
 
