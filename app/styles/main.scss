@@ -1,0 +1,48 @@
+body {
+  margin: 0px;
+  background: hsl(20, 18%, 93%);
+  font-family: 'Lato', Helvetica neue;
+  color: #414141;
+}
+
+a {
+  text-decoration: none;
+  color: #414141;
+}
+
+.content {
+  width: 70%;
+  max-width: 810px;
+  margin: 0 auto;
+}
+
+.quote {
+  font-size: 44px;
+  margin: 20% 0 20px;
+  letter-spacing: 1px;
+}
+
+.author {
+  margin: 35px 0;
+  color: hsl(0, 0%, 65%);
+  font-size: 35px;
+}
+
+.fade2 {
+  display: none;
+  span {
+    opacity: 0;
+    filter: alpha(Opacity=00);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
+  }
+}
+
+@media all and (max-width: 800px) {
+  .quote {
+    font-size: 30px;
+  }
+
+  .author {
+    font-size: 20px;
+  }
+}
