@@ -46,3 +46,40 @@ a {
     font-size: 20px;
   }
 }
+
+@keyframes shortFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes longFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.down-1 {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: shortFadeIn;
+}
+
+.down-2 {
+  animation-duration: 1.3s;
+  animation-fill-mode: both;
+  animation-name: longFadeIn;
+}
+
