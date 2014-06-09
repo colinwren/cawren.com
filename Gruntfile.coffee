@@ -56,6 +56,8 @@ module.exports = (grunt) ->
     'gh-pages':
       options:
         base: 'dist'
+        branch: 'master'
+        repo: 'https://github.com/colinwren/colinwren.github.io.git'
       src: ['**']
 
   grunt.registerTask('build',[
